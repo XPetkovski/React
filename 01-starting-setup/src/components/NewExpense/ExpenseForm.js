@@ -50,7 +50,7 @@ const ExpenseForm = (props) => {
         event.preventDefault(); //da ne se prakja request celo vreme, nema da se refreshira sajtot na sekoj submit klik
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
 
@@ -79,6 +79,7 @@ const ExpenseForm = (props) => {
             </div>
         </div>
         <div className="new-expense__actions">
+            <button type="button" onClick={props.onCancel}>Cancel</button>
             <button type="submit">Add Expense</button>
         </div>
             {/*KREIRANJE FORMA, LABEL pravi naslov na labela na formata, input e toa sto vnesuvame kako parametar ili vrednost w/e
